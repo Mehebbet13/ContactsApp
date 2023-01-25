@@ -55,13 +55,24 @@ open class ContactsListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getContactList()
+        setData()
+        binding?.swipeRefresh?.setOnRefreshListener {
+            viewModel.getContactList()
+            setData()
+        }
+
+        setAdapterData()
+    }
+
+    private fun setData() {
         lifecycleScope.launch {
             viewModel.uiState.collect { contact ->
                 val dbContacts = contact.results?.map { it.toDbContact() }
                 dbContacts?.let { viewModel.addAllContactsDatabase(it) }
+                binding?.progress?.visibility = View.GONE
+                binding?.swipeRefresh?.isRefreshing = false
             }
         }
-        setAdapterData()
     }
 
     private fun setAdapterData() {
