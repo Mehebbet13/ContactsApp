@@ -24,4 +24,16 @@ class DetailsViewModel(
             }
         }
     }
+
+    fun deleteContact(id: Int, callback: () -> Unit) {
+        viewModelScope.launch {
+            try {
+                repository.deleteById(id)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                callback.invoke()
+            }
+        }
+    }
 }

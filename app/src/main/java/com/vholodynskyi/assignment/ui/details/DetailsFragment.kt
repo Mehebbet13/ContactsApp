@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.squareup.picasso.Picasso
 import com.vholodynskyi.assignment.databinding.FragmentDetailsBinding
@@ -26,10 +27,7 @@ open class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return FragmentDetailsBinding.inflate(layoutInflater, container, false)
-            .also {
-                binding = it
-            }
-            .root
+            .also { binding = it }.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +36,7 @@ open class DetailsFragment : Fragment() {
         lifecycleScope.launch {
             detailsViewModel.contact.observe(viewLifecycleOwner) { setData(it) }
         }
+        deleteContact()
     }
 
     private fun setData(contact: DbContact) {
@@ -46,6 +45,14 @@ open class DetailsFragment : Fragment() {
             name.text =
                 StringBuilder().append(contact.firstName).append(BLANK).append(contact.lastName)
             Picasso.get().load(contact.photo).into(photo)
+        }
+    }
+
+    private fun deleteContact() {
+        binding?.delete?.setOnClickListener {
+            detailsViewModel.deleteContact(args.id) {
+                findNavController().popBackStack()
+            }
         }
     }
 

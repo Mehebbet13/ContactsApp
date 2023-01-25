@@ -12,6 +12,10 @@ class ContactsRepositoryImpl(private val database: ContactsDao) : ContactsReposi
         database.deleteAll()
     }
 
+    override suspend fun deleteById(id: Int) {
+        database.deleteById(id)
+    }
+
     override suspend fun getContacts(): List<DbContact> {
         return database.getContacts()
     }

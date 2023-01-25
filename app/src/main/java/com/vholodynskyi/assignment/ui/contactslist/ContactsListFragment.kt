@@ -60,7 +60,6 @@ open class ContactsListFragment : Fragment() {
             viewModel.getContactList()
             setData()
         }
-
         setAdapterData()
     }
 
@@ -78,7 +77,7 @@ open class ContactsListFragment : Fragment() {
     private fun setAdapterData() {
         lifecycleScope.launch {
             viewModel.contacts.collect {
-                contactAdapter.items = it
+                contactAdapter.items = it.reversed()
             }
         }
     }
