@@ -1,4 +1,4 @@
-package com.vholodynskyi.assignment.ui.contactslist
+package com.vholodynskyi.assignment.presentation.contactslist
 
 import android.R
 import android.graphics.Canvas
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vholodynskyi.assignment.api.contacts.toDbContact
 import com.vholodynskyi.assignment.databinding.FragmentContactsListBinding
-import com.vholodynskyi.assignment.di.GlobalFactory
+import com.vholodynskyi.assignment.data.datasource.di.GlobalFactory
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch

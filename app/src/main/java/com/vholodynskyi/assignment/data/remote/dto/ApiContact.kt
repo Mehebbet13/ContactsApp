@@ -2,7 +2,7 @@ package com.vholodynskyi.assignment.api.contacts
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import com.vholodynskyi.assignment.db.contacts.DbContact
+import com.vholodynskyi.assignment.domain.model.DbContact
 
 @JsonClass(generateAdapter = true)
 data class ApiContact(

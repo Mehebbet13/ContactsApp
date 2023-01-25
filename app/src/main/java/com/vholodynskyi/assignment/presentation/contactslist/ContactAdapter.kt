@@ -1,12 +1,12 @@
-package com.vholodynskyi.assignment.ui.contactslist
+package com.vholodynskyi.assignment.presentation.contactslist
 
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vholodynskyi.assignment.databinding.ItemContactListBinding
-import com.vholodynskyi.assignment.db.contacts.DbContact
-import com.vholodynskyi.assignment.ui.details.DetailsFragment.Companion.BLANK
+import com.vholodynskyi.assignment.domain.model.DbContact
+import com.vholodynskyi.assignment.presentation.details.DetailsFragment.Companion.BLANK
 
 class ContactAdapter(
     private val context: Activity,

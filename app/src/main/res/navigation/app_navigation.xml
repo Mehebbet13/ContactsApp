@@ -5,7 +5,7 @@
     app:startDestination="@id/contactList">
     <fragment
         android:id="@+id/contactList"
-        android:name="com.vholodynskyi.assignment.ui.contactslist.ContactsListFragment">
+        android:name="com.vholodynskyi.assignment.presentation.contactslist.ContactsListFragment">
         <action
             android:id="@+id/action_contactList_to_details"
             app:destination="@id/details">
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/details"
-        android:name="com.vholodynskyi.assignment.ui.details.DetailsFragment">
+        android:name="com.vholodynskyi.assignment.presentation.details.DetailsFragment">
         <argument
             android:name="id"
             app:argType="integer" />

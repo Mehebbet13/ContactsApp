@@ -1,15 +1,14 @@
-package com.vholodynskyi.assignment.di
+package com.vholodynskyi.assignment.data.datasource.di
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
-import com.vholodynskyi.assignment.api.RetrofitServicesProvider
-import com.vholodynskyi.assignment.api.contacts.ContactsService
-import com.vholodynskyi.assignment.db.AppDatabase
-import com.vholodynskyi.assignment.repository.ContactsRepositoryImpl
-import com.vholodynskyi.assignment.ui.contactslist.ContactsListViewModel
-import com.vholodynskyi.assignment.ui.details.DetailsViewModel
+import com.vholodynskyi.assignment.data.remote.ContactsService
+import com.vholodynskyi.assignment.data.datasource.AppDatabase
+import com.vholodynskyi.assignment.data.repository.ContactsRepositoryImpl
+import com.vholodynskyi.assignment.presentation.contactslist.ContactsListViewModel
+import com.vholodynskyi.assignment.presentation.details.DetailsViewModel
 
 object GlobalFactory : ViewModelProvider.Factory {
 

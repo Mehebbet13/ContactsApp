@@ -1,4 +1,4 @@
-package com.vholodynskyi.assignment.ui.main
+package com.vholodynskyi.assignment.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

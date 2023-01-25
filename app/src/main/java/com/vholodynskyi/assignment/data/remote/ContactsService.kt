@@ -1,5 +1,6 @@
-package com.vholodynskyi.assignment.api.contacts
+package com.vholodynskyi.assignment.data.remote
 
+import com.vholodynskyi.assignment.data.remote.dto.ApiContactResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

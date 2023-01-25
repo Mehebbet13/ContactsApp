@@ -1,12 +1,12 @@
-package com.vholodynskyi.assignment.ui.contactslist
+package com.vholodynskyi.assignment.presentation.contactslist
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vholodynskyi.assignment.api.contacts.ApiContactResponse
-import com.vholodynskyi.assignment.db.contacts.DbContact
-import com.vholodynskyi.assignment.di.GlobalFactory
-import com.vholodynskyi.assignment.repository.ContactsRepository
+import com.vholodynskyi.assignment.data.remote.dto.ApiContactResponse
+import com.vholodynskyi.assignment.domain.model.DbContact
+import com.vholodynskyi.assignment.data.datasource.di.GlobalFactory
+import com.vholodynskyi.assignment.domain.repository.ContactsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,6 +1,7 @@
-package com.vholodynskyi.assignment.db.contacts
+package com.vholodynskyi.assignment.data.datasource
 
 import androidx.room.*
+import com.vholodynskyi.assignment.domain.model.DbContact
 
 @Dao
 interface ContactsDao {

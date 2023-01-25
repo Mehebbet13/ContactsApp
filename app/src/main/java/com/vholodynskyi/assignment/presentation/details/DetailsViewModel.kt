@@ -1,11 +1,11 @@
-package com.vholodynskyi.assignment.ui.details
+package com.vholodynskyi.assignment.presentation.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vholodynskyi.assignment.db.contacts.DbContact
-import com.vholodynskyi.assignment.repository.ContactsRepository
+import com.vholodynskyi.assignment.domain.model.DbContact
+import com.vholodynskyi.assignment.domain.repository.ContactsRepository
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(

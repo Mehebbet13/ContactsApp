@@ -1,6 +1,6 @@
-package com.vholodynskyi.assignment.repository
+package com.vholodynskyi.assignment.domain.repository
 
-import com.vholodynskyi.assignment.db.contacts.DbContact
+import com.vholodynskyi.assignment.domain.model.DbContact
 
 interface ContactsRepository {
     suspend fun addAllContacts(contact: List<DbContact>)

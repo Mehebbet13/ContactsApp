@@ -1,9 +1,9 @@
-package com.vholodynskyi.assignment.db
+package com.vholodynskyi.assignment.data.datasource
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.vholodynskyi.assignment.db.contacts.ContactsDao
-import com.vholodynskyi.assignment.db.contacts.DbContact
+import com.vholodynskyi.assignment.data.datasource.ContactsDao
+import com.vholodynskyi.assignment.domain.model.DbContact
 
 @Database(entities = [DbContact::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {

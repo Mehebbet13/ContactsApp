@@ -1,4 +1,4 @@
-package com.vholodynskyi.assignment.ui.details
+package com.vholodynskyi.assignment.presentation.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.squareup.picasso.Picasso
 import com.vholodynskyi.assignment.databinding.FragmentDetailsBinding
-import com.vholodynskyi.assignment.db.contacts.DbContact
-import com.vholodynskyi.assignment.di.GlobalFactory
+import com.vholodynskyi.assignment.domain.model.DbContact
+import com.vholodynskyi.assignment.data.datasource.di.GlobalFactory
 import kotlinx.coroutines.launch
 
 open class DetailsFragment : Fragment() {

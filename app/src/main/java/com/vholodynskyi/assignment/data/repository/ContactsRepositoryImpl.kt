@@ -1,7 +1,8 @@
-package com.vholodynskyi.assignment.repository
+package com.vholodynskyi.assignment.data.repository
 
-import com.vholodynskyi.assignment.db.contacts.ContactsDao
-import com.vholodynskyi.assignment.db.contacts.DbContact
+import com.vholodynskyi.assignment.data.datasource.ContactsDao
+import com.vholodynskyi.assignment.domain.model.DbContact
+import com.vholodynskyi.assignment.domain.repository.ContactsRepository
 
 class ContactsRepositoryImpl(private val database: ContactsDao) : ContactsRepository {
     override suspend fun addAllContacts(contact: List<DbContact>) {

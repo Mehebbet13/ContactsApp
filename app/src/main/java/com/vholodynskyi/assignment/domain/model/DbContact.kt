@@ -1,4 +1,4 @@
-package com.vholodynskyi.assignment.db.contacts
+package com.vholodynskyi.assignment.domain.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
