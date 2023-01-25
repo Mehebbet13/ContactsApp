@@ -11,12 +11,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vholodynskyi.assignment.api.contacts.toDbContact
 import com.vholodynskyi.assignment.databinding.FragmentContactsListBinding
+import com.vholodynskyi.assignment.di.GlobalFactory
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 open class ContactsListFragment : Fragment() {
 
-    private val viewModel: ContactsListViewModel by viewModels()
+    private val viewModel: ContactsListViewModel by viewModels<ContactsListViewModel> {
+        GlobalFactory
+    }
 
     private val contactAdapter: ContactAdapter by lazy {
         ContactAdapter(

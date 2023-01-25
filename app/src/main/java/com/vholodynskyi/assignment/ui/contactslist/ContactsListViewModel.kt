@@ -32,12 +32,11 @@ class ContactsListViewModel(
     fun addAllContactsDatabase(contact: List<DbContact>) {
         viewModelScope.launch {
             try {
+                repository.deleteAll()
                 repository.addAllContacts(contact)
 //                GlobalFactory.db.userDao().addAll(contact) // what if write this way without repository
             } catch (e: Exception) {
                 e.printStackTrace()
-            } finally {
-                Log.i("db data", GlobalFactory.db.userDao().getContacts().toString())
             }
         }
     }

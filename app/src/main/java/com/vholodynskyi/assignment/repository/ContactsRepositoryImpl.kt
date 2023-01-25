@@ -7,4 +7,8 @@ class ContactsRepositoryImpl(private val database: ContactsDao) : ContactsReposi
     override suspend fun addAllContacts(contact: List<DbContact>) {
         database.addAll(contact)
     }
+
+    override suspend fun deleteAll() {
+        database.deleteAll()
+    }
 }
