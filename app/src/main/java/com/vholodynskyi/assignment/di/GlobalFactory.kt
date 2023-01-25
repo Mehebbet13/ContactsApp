@@ -30,7 +30,7 @@ object GlobalFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when (modelClass) {
             ContactsListViewModel::class.java -> ContactsListViewModel(ContactsRepositoryImpl(db.userDao()))
-            DetailsViewModel::class.java -> DetailsViewModel()
+            DetailsViewModel::class.java -> DetailsViewModel(ContactsRepositoryImpl(db.userDao()))
             else -> throw IllegalArgumentException("Cannot create factory for ${modelClass.simpleName}")
         } as T
     }

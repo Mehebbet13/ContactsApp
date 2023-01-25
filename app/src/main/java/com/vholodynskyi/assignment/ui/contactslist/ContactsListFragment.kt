@@ -28,7 +28,7 @@ open class ContactsListFragment : Fragment() {
         )
     }
 
-    private fun onContactClicked(id: String) {
+    private fun onContactClicked(id: Int) {
         findNavController()
             .navigate(ContactsListFragmentDirections.actionContactListToDetails(id))
     }
@@ -59,9 +59,15 @@ open class ContactsListFragment : Fragment() {
             viewModel.uiState.collect { contact ->
                 val dbContacts = contact.results?.map { it.toDbContact() }
                 dbContacts?.let { viewModel.addAllContactsDatabase(it) }
-                val emailList =
-                    contact.results?.map { "${it.name?.firstName} ${it.name?.lastName}" }
-                emailList?.let { list -> contactAdapter.items = list }
+            }
+        }
+        setAdapterData()
+    }
+
+    private fun setAdapterData() {
+        lifecycleScope.launch {
+            viewModel.contacts.collect {
+                contactAdapter.items = it
             }
         }
     }
