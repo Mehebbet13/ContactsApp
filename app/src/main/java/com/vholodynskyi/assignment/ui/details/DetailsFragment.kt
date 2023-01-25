@@ -37,6 +37,9 @@ open class DetailsFragment : Fragment() {
             detailsViewModel.contact.observe(viewLifecycleOwner) { setData(it) }
         }
         deleteContact()
+        binding?.backButton?.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun setData(contact: DbContact) {

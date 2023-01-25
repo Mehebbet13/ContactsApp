@@ -19,6 +19,10 @@ class ContactAdapter(
             notifyDataSetChanged()
         }
 
+    fun removeAt(index: Int) {
+        items.toMutableList().removeAt(index)
+        notifyItemRemoved(index)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         return ViewHolder(
             ItemContactListBinding.inflate(LayoutInflater.from(context), parent, false)
